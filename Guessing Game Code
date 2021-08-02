@@ -1,0 +1,29 @@
+
+import random
+number = random.randrange(1,101)
+print ("Welcome to my first number guessing game!\nAll you have to do is correctly guess the number generated between 1 and 100! \nYou have unlimited tries to have fun guessing!")
+def guess_number ():
+    counter = 0
+    while True:
+        try:
+            guess_number = int(input("guess a whole number between 1-100: "))
+        except ValueError:
+            print ("This is not a valid number, please try again")
+            continue
+        else:
+            if 1 <= int(guess_number) < 100:
+                print ("Let's see if your number is correct!")
+            else:
+                print ("This number is out of range")
+        if  guess_number > number:
+                print("Your number is too high, try again")
+        elif guess_number < number:
+                counter += 1
+                print("Your number is too low, try again")
+        elif guess_number == number:
+                counter += 1
+                print ("You guessed the number correctly, well done!")
+                break
+        
+print (guess_number())
+    
